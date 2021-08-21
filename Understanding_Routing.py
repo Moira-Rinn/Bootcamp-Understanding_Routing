@@ -7,17 +7,25 @@ def home():
     return render_template('hello_world.html')
 
 
+# @app.route('/<endPoint>')
+# def routes(endPoint, num=0, name='none', whatever='none'):
+#     if endPoint == 'dojo':
+#         return render_template('dojo.html')
+#     elif endPoint == 'say/<name>':
+#         return render_template('say.html', name=name)
+#     elif endPoint == 'repeat/<num>/<whatever>':
+#         return render_template('repeat.html', num=int(num), whatever=whatever)
+#     else:
+#         return render_template('error.html', endPoint=endPoint)
+
 @app.route('/dojo')
-def about():
+def dojo():
     return render_template('dojo.html')
 
 
 @app.route('/say/<name>')
 def projects(name):
-    if type(name) == int:
-        return render_template('say.html', name=name)
-    else:
-        return render_template('error.html', name=name)
+    return render_template('say.html', name=name)
 
 
 @app.route('/repeat/<num>/<whatever>')
